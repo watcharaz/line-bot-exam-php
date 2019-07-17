@@ -80,7 +80,7 @@ else if ($message == "นับ 1-10"){
 else if ($message == "vs"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['originalContentUrl'] = "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4";//ใส่ url ของ video ที่ต้องการส่ง
+	$arrayPostData['messages'][0]['originalContentUrl'] = "https://www.radiantmediaplayer.com/media/bbb-360p.mp4";//ใส่ url ของ video ที่ต้องการส่ง
 	$arrayPostData['messages'][0]['previewImageUrl'] = "";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
