@@ -80,8 +80,8 @@ else if ($message == "นับ 1-10"){
 else if ($message == "vs"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['originalContentUrl'] = "https://www.radiantmediaplayer.com/media/bbb-360p.mp4";//ใส่ url ของ video ที่ต้องการส่ง
-	$arrayPostData['messages'][0]['previewImageUrl'] = "";//ใส่รูป preview ของ video
+	$arrayPostData['messages'][0]['originalContentUrl'] = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";//ใส่ url ของ video ที่ต้องการส่ง
+	$arrayPostData['messages'][0]['previewImageUrl'] = "images/BigBuckBunny.jpg";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
 
