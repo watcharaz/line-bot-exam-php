@@ -1,8 +1,5 @@
 <?php // callback.php
 
-require "vendor/autoload.php";
-require_once 'vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php';
-
 $accessToken = "qHeas1kVDNRSBK0gHl3s8osjuqLp04RULKx8OK3/t1KXjrL0hVBl/OyYAUC2x0hTB4gpBG10FJFyV1GkFKf+45pXJURIwDAYlhG0L0maQttMyC7ypENzqNGskBbRs2k1J0SN5KTIFxRDRxTxFlKfwwdB04t89/1O/w1cDnyilFU=
 "; //copy Channel access token ตอนที่ตั้งค่ามาใส่
 
