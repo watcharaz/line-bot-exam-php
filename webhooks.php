@@ -31,7 +31,7 @@ else if ($message == "ฝันดี") {
 	replyMsg($arrayHeader, $arrayPostData);
 }
 #ตัวอย่าง Message Type "Sticker" เคลื่อไหว
-else if ($message == "ดีครับ") {
+else if ($message == ['ดีครับ','ดีค่ะ']) {
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "sticker";
 	$arrayPostData['messages'][0]['packageId'] = "11537";
