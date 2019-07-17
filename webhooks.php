@@ -84,13 +84,6 @@ else if ($message == "vi"){
 	$arrayPostData['messages'][0]['previewImageUrl'] = "images/BigBuckBunny.jpg";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
-#ตัวอย่าง Message Type "Audio"
-else if ($message == "au"){
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-	$arrayPostData['messages'][0]['type'] = "follow";
-	$arrayPostData['messages'][0]['timestamp'] = "1462629479859";
-	replyMsg($arrayHeader,$arrayPostData);
-}
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
