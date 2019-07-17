@@ -77,11 +77,11 @@ else if ($message == "นับ 1-10"){
 	}
 }
 #ตัวอย่าง Message Type "Video"
-else if ($message == "video"){
+else if ($message == "vs"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
 	$arrayPostData['messages'][0]['originalContentUrl'] = "http://techslides.com/demos/sample-videos/small.webm";//ใส่ url ของ video ที่ต้องการส่ง
-	$arrayPostData['messages'][0]['previewImageUrl'] = "";//ใส่รูป preview ของ video
+	$arrayPostData['messages'][0]['previewImageUrl'] = "http://techslides.com/demos/sample-videos/small.webm";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
 
