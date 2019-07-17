@@ -87,9 +87,8 @@ else if ($message == "vi"){
 #ตัวอย่าง Message Type "Audio"
 else if ($message == "au"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-	$arrayPostData['messages'][0]['type'] = "Audio";
-	$arrayPostData['messages'][0]['duration'] = "60000";
-	$arrayPostData['messages'][0]['contentProvider'] = "http://transom.org/wp-content/uploads/2004/03/stereo_96kbps.mp3?_=6";//ใส่ url ของ video ที่ต้องการส่ง
+	$arrayPostData['messages'][0]['type'] = "follow";
+	$arrayPostData['messages'][0]['timestamp'] = "1462629479859";
 	replyMsg($arrayHeader,$arrayPostData);
 }
 function replyMsg($arrayHeader,$arrayPostData){
