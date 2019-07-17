@@ -39,7 +39,7 @@ else if ($message == "ดีครับ") {
 	replyMsg($arrayHeader, $arrayPostData);
 }
 #ตัวอย่าง Message Type "Image"
-else if ($message == "รูปน้องแมว") {
+else if ($message == "รูปแมว") {
 	$image_url = "https://i.pinimg.com/originals/cc/22/d1/cc22d10d9096e70fe3dbe3be2630182b.jpg";
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "image";
@@ -80,7 +80,7 @@ else if ($message == "นับ 1-10"){
 else if ($message == "vs"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['duration'] = "60000";
+	$arrayPostData['messages'][0]['type'] = "external";
 	$arrayPostData['messages'][0]['originalContentUrl'] = "http://0.s3.envato.com/h264-video-previews/80fad324-9db4-11e3-bf3d-0050569255a8/490527.mp4";//ใส่ url ของ video ที่ต้องการส่ง
 	$arrayPostData['messages'][0]['previewImageUrl'] = "images/BigBuckBunny.jpg";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
