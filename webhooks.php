@@ -70,12 +70,12 @@ else if ($message == "ลาก่อน") {
 else if ($message == "video"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['originalContentUrl'] = "https://streamable.com/8csv1";//ใส่ url ของ video ที่ต้องการส่ง
+	$arrayPostData['messages'][0]['originalContentUrl'] = "https://streamable.com/8csv1.mp4";//ใส่ url ของ video ที่ต้องการส่ง
 	$arrayPostData['messages'][0]['previewImageUrl'] = "";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
 #ตัวอย่าง Message นับเลข
-if($message == "นับ 1-10"){
+else if ($message == "นับ 1-10"){
 	for($i=1;$i<=10;$i++){
 	  $arrayPostData['to'] = $id;
 	  $arrayPostData['messages'][0]['type'] = "text";
