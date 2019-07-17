@@ -77,15 +77,21 @@ else if ($message == "นับ 1-10"){
 	}
 }
 #ตัวอย่าง Message Type "Video"
-else if ($message == "vs"){
+else if ($message == "vi"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['type'] = "external";
 	$arrayPostData['messages'][0]['originalContentUrl'] = "http://0.s3.envato.com/h264-video-previews/80fad324-9db4-11e3-bf3d-0050569255a8/490527.mp4";//ใส่ url ของ video ที่ต้องการส่ง
 	$arrayPostData['messages'][0]['previewImageUrl'] = "images/BigBuckBunny.jpg";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
-
+#ตัวอย่าง Message Type "Audio"
+else if ($message == "au"){
+	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+	$arrayPostData['messages'][0]['type'] = "Audio";
+	$arrayPostData['messages'][0]['duration'] = "60000";
+	$arrayPostData['messages'][0]['contentProvider'] = "http://transom.org/wp-content/uploads/2004/03/stereo_96kbps.mp3?_=6";//ใส่ url ของ video ที่ต้องการส่ง
+	replyMsg($arrayHeader,$arrayPostData);
+}
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
