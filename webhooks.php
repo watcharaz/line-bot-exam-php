@@ -80,7 +80,7 @@ else if ($message == "นับ 1-10"){
 else if ($message == "vs"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['originalContentUrl'] = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";//ใส่ url ของ video ที่ต้องการส่ง
+	$arrayPostData['messages'][0]['originalContentUrl'] = "blob:https://www.dropbox.com/b00b0647-86f8-490e-bc34-ff913bee9c4f";//ใส่ url ของ video ที่ต้องการส่ง
 	$arrayPostData['messages'][0]['previewImageUrl'] = "images/BigBuckBunny.jpg";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
