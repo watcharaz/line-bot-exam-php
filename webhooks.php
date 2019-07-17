@@ -80,7 +80,7 @@ else if ($message == "นับ 1-10"){
 else if ($message == "vs"){
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['originalContentUrl'] = "blob:https://www.dropbox.com/b00b0647-86f8-490e-bc34-ff913bee9c4f";//ใส่ url ของ video ที่ต้องการส่ง
+	$arrayPostData['messages'][0]['originalContentUrl'] = "http://0.s3.envato.com/h264-video-previews/80fad324-9db4-11e3-bf3d-0050569255a8/490527.mp4";//ใส่ url ของ video ที่ต้องการส่ง
 	$arrayPostData['messages'][0]['previewImageUrl'] = "images/BigBuckBunny.jpg";//ใส่รูป preview ของ video
 	replyMsg($arrayHeader,$arrayPostData);
 }
