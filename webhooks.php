@@ -3,7 +3,7 @@
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
-$accessToken = "WrWkMADGqaenlmRb3r8aPworUiFfXqy831EdZS6avx7ixF1Nlvghn9Xv7Tby2TcmB4gpBG10FJFyV1GkFKf+45pXJURIwDAYlhG0L0maQtswVltqeQqm+MXr4rZA2DRnbD7f0hBfKMRSmz8S2ly6HwdB04t89/1O/w1cDnyilFU="; //copy Channel access token ตอนที่ตั้งค่ามาใส่
+$accessToken = "WrWkMADGqaenlmRb3r8aPworUiFfXqy831EdZS6avx7ixF1Nlvghn9Xv7Tby2TcmB4gpBG10FJFyV1GkFKf+45pXJURIwDAYlhG0L0maQtswVltqeQqm+MXr4rZA2DRnbD7f0hBfKMRSmz8S2ly6HwdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
 
 $content = file_get_contents('php://input');
 $arrayJson = json_decode($content, true);
@@ -14,6 +14,7 @@ $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 
 //รับข้อความจากผู้ใช้
 $message = $arrayJson['events'][0]['message']['text'];
+
 #ตัวอย่าง Message Type "Text"
 if ($message == "สวัสดี") {
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
@@ -66,14 +67,6 @@ else if ($message == "ลาก่อน") {
 	$arrayPostData['messages'][1]['stickerId'] = "131";
 	replyMsg($arrayHeader, $arrayPostData);
 }
-#ตัวอย่าง Message Type "Video"
-else if ($message == "video"){
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['originalContentUrl'] = "https://streamable.com/8csv1.mp4";//ใส่ url ของ video ที่ต้องการส่ง
-	$arrayPostData['messages'][0]['previewImageUrl'] = "";//ใส่รูป preview ของ video
-	replyMsg($arrayHeader,$arrayPostData);
-}
 #ตัวอย่าง Message นับเลข
 else if ($message == "นับ 1-10"){
 	for($i=1;$i<=10;$i++){
@@ -82,6 +75,14 @@ else if ($message == "นับ 1-10"){
 	  $arrayPostData['messages'][0]['text'] = $i;
 	  pushMsg($arrayHeader,$arrayPostData);
 	}
+}
+#ตัวอย่าง Message Type "Video"
+else if ($message == "video"){
+	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+	$arrayPostData['messages'][0]['type'] = "video";
+	$arrayPostData['messages'][0]['originalContentUrl'] = "https://streamable.com/8csv1.mp4";//ใส่ url ของ video ที่ต้องการส่ง
+	$arrayPostData['messages'][0]['previewImageUrl'] = "";//ใส่รูป preview ของ video
+	replyMsg($arrayHeader,$arrayPostData);
 }
 function replyMsg($arrayHeader, $arrayPostData)
 {
