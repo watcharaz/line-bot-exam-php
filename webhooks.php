@@ -67,23 +67,7 @@ else if ($message == "ลาก่อน") {
 	$arrayPostData['messages'][1]['stickerId'] = "131";
 	replyMsg($arrayHeader, $arrayPostData);
 }
-#ตัวอย่าง Message นับเลข
-else if ($message == "นับ 1-10"){
-	for($i=1;$i<=10;$i++){
-	  $arrayPostData['to'] = $id;
-	  $arrayPostData['messages'][0]['type'] = "text";
-	  $arrayPostData['messages'][0]['text'] = $i;
-	  pushMsg($arrayHeader,$arrayPostData);
-	}
-}
-#ตัวอย่าง Message Type "Video"
-else if ($message == "vi"){
-	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-	$arrayPostData['messages'][0]['type'] = "video";
-	$arrayPostData['messages'][0]['originalContentUrl'] = "http://0.s3.envato.com/h264-video-previews/80fad324-9db4-11e3-bf3d-0050569255a8/490527.mp4";//ใส่ url ของ video ที่ต้องการส่ง
-	$arrayPostData['messages'][0]['previewImageUrl'] = "images/BigBuckBunny.jpg";//ใส่รูป preview ของ video
-	replyMsg($arrayHeader,$arrayPostData);
-}
+
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
