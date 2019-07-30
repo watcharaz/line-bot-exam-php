@@ -48,7 +48,7 @@ else if ($message == "รูปแมว") {
 	replyMsg($arrayHeader, $arrayPostData);
 }
 #ตัวอย่าง Message Type "Location"
-else if ($message == "ตำแหน่งที่อยู่") {
+else if ($message == "ติดต่อ") {
 	$arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 	$arrayPostData['messages'][0]['type'] = "location";
 	$arrayPostData['messages'][0]['title'] = "หน้าโรงเรียน ธรรมมิสลาม ท่าอิฐ";
